@@ -7,8 +7,11 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 
 import "./navbar.scss";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 const Navbar = () => {
+const {dispatch} = useContext(DarkModeContext)
   
 
   return (
@@ -23,10 +26,11 @@ const Navbar = () => {
             <LanguageOutlinedIcon className="icon" />
             English
           </div>
-          <div className="item">
-            <DarkModeOutlinedIcon
-              className="icon"
-            />
+          <div className="item" >
+                <DarkModeOutlinedIcon
+                  className="icon"
+                  onClick={()=>dispatch({type:"TOGGLE"})}
+                />  
           </div>
           <div className="item">
             <FullscreenExitOutlinedIcon className="icon" />
