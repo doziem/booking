@@ -18,10 +18,15 @@ import "./sidebar.scss"
 
 const Sidebar = () => {
   return (
-    <div className='sidebar'>
-        <div className="top"><MenuIcon /><span className="logo">Admin</span></div>
-        <hr />
-        <div className="center">
+    <div className="sidebar">
+      <div className="top">
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <MenuIcon />
+          <span className="logo">Admin</span>
+        </Link>
+      </div>
+      <hr />
+      <div className="center">
         <ul>
           <p className="title">MAIN</p>
           <li>
@@ -29,10 +34,22 @@ const Sidebar = () => {
             <span>Dashboard</span>
           </li>
           <p className="title">LISTS</p>
-          <Link to="/users" style={{ textDecoration: "none" }}>
+          <Link to="/user" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
               <span>Users</span>
+            </li>
+          </Link>
+          <Link to="/products" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Products</span>
+            </li>
+          </Link>
+          <Link to="/orders" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Orders</span>
             </li>
           </Link>
           <Link to="/hotels" style={{ textDecoration: "none" }}>
@@ -92,15 +109,11 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="bottom">
-        <div
-          className="colorOption"
-        ></div>
-        <div
-          className="colorOption"
-        ></div>
+        <div className="colorOption"></div>
+        <div className="colorOption"></div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
