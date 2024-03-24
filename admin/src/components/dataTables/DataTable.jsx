@@ -1,17 +1,19 @@
-import { Box } from "@mui/material";
 import {Link} from "react-router-dom"
 import { DataGrid } from '@mui/x-data-grid';
 import { userColumns,userRows } from "../../dataTableSource";
 import "./dataTable.scss";
+import { useState } from "react";
 
 const DataTable = () => {
 
+  const [data,setData] = useState(userRows)
 
   const handleDelete = async (id) => {
     // try {
     //   await axios.delete(`/${path}/${id}`);
     //   setList(list.filter((item) => item._id !== id));
     // } catch (err) {}
+    setData(data.filter(item=>item.id !== id))
   };
 
   const actionColumn = [
@@ -46,7 +48,7 @@ const DataTable = () => {
       </div>
     <DataGrid
      className="datagrid"
-      rows={userRows}
+      rows={data}
       columns={userColumns.concat(actionColumn)}
       pageSize={5}
       rowsPerPageOptions={[5]}
