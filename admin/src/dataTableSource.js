@@ -44,14 +44,14 @@ export const userRows = [
 
 export const userColumns = [
   {
-    field: "id",
+    field: "_id",
     headerName: "ID",
-    width: 70,
+    width: 100,
   },
   {
     field: "user",
     headerName: "User",
-    width: 230,
+    width: 170,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
@@ -70,36 +70,29 @@ export const userColumns = [
     headerName: "Email",
     width: 200,
   },
-
+  // {
+  //   field: "status",
+  //   headerName: "Status",
+  //   width: 160,
+  //   renderCell:(params)=>{
+  //     return <div className={`cellWithStatus ${params.row.status}`}>{params.row.status} </div>
+  //   }
+  // },
   {
-    field: "age",
-    headerName: "Age",
+    field: "country",
+    headerName: "Country",
     width: 130,
   },
-
   {
-    field: "status",
-    headerName: "Status",
-    width: 160,
-    renderCell:(params)=>{
-      return <div className={`cellWithStatus ${params.row.status}`}>{params.row.status} </div>
-    }
+    field: "city",
+    headerName: "City",
+    width: 130,
   },
-  // {
-  //   field: "country",
-  //   headerName: "Country",
-  //   width: 100,
-  // },
-  // {
-  //   field: "city",
-  //   headerName: "City",
-  //   width: 100,
-  // },
-  // {
-  //   field: "phone",
-  //   headerName: "Phone",
-  //   width: 100,
-  // },
+  {
+    field: "phone",
+    headerName: "Phone",
+    width: 130,
+  },
 ];
   
   export const hotelColumns = [

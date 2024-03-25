@@ -9,15 +9,14 @@ export const registerUser = async (req, res, next) => {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
     const newUser = new User({
-      username: req.body.username,
-      name: req.body.name,
-      email: req.body.email,
+     ...req.body,
       password: hash,
     });
     await newUser.save();
     res.status(201).json("User Created");
   } catch (error) {
     next(error);
+    console.log("Error::::",error)
   }
 };
 
@@ -39,17 +38,18 @@ export const loginUser = async (req, res, next) => {
 
     if (!isPassword) return next(createError(400, "Wrong Credentials"));
 
-    const { password, isAdmin, ...others } = user._doc;
-
     const token = jwt.sign(
       { id: user._id, isAdmin: user.isAdmin },
       process.env.JWT_SECRET
     );
+    
+    const { password, isAdmin, ...others } = user._doc;
     res
       .cookie("access_token", token, { httpOnly: true })
       .status(201)
-      .json({ ...others });
+      .json({ details: { ...others }, isAdmin });
   } catch (error) {
     next(error);
+    console.log("Error:::", error);
   }
 };

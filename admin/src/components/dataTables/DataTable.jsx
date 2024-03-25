@@ -1,26 +1,37 @@
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 import { DataGrid } from '@mui/x-data-grid';
-import { userColumns,userRows } from "../../dataTableSource";
+import { userColumns, } from "../../dataTableSource";
 import "./dataTable.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useFetch from "../hooks/useFetch"
+import axios from "axios";
 
 const DataTable = () => {
+const [list,setList] = useState([])
 
-  const [data,setData] = useState(userRows)
+const location = useLocation()
 
+const path = location.pathname.split("/")[1]
+
+  const {data,loading,error} = useFetch(`/${path}`)
+
+  useEffect(() => {
+  setList(data)
+  }, [data])
+  
+console.log(path);
   const handleDelete = async (id) => {
-    // try {
-    //   await axios.delete(`/${path}/${id}`);
-    //   setList(list.filter((item) => item._id !== id));
-    // } catch (err) {}
-    setData(data.filter(item=>item.id !== id))
+    try {
+      await axios.delete(`/${path}/${id}`);
+      setList(list.filter((item) => item._id !== id));
+    } catch (err) {}
   };
 
   const actionColumn = [
     {
       field: "action",
       headerName: "Action",
-      width: 130,
+      width: 150,
       renderCell: (params) => {
         return (
           <div className="cellAction">
@@ -48,13 +59,14 @@ const DataTable = () => {
       </div>
     <DataGrid
      className="datagrid"
-      rows={data}
+      rows={list}
       columns={userColumns.concat(actionColumn)}
       pageSize={5}
       rowsPerPageOptions={[5]}
       checkboxSelection
       disableSelectionOnClick
       experimentalFeatures={{ newEditingApi: true }}
+      getRowId={row=>row._id}
       />
       </div>
   );
