@@ -4,7 +4,7 @@ import Navbar from '../../components/navbar/Navbar'
 
 import "./list.scss"
 
-const List = () => {
+const List = ({columns}) => {
   return (
     <div className="list">
     <Sidebar/>
@@ -12,7 +12,7 @@ const List = () => {
       <Navbar/>
 
       <DataTable 
-      // columns={columns}
+      columns={columns}
       />
     </div>
   </div>

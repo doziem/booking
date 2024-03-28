@@ -11,7 +11,7 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import LocalMallIcon from "@mui/icons-material/LocalMall";
+// import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { Link } from "react-router-dom";
 
 import "./sidebar.scss";
@@ -30,13 +30,16 @@ const Sidebar = () => {
         </Link>
       </div>
       <hr />
-      <div className="center">
+      <div className="center"> 
         <ul>
           <p className="title">MAIN</p>
+          <Link to={"/"} style={{ textDecoration: "none" }}>
           <li>
             <DashboardIcon className="icon" />
             <span>Dashboard</span>
           </li>
+
+          </Link>
           <p className="title">LISTS</p>
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>

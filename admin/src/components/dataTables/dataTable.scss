@@ -10,6 +10,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      text-transform: capitalize;
   
       .link{
         text-decoration: none;
@@ -19,6 +20,7 @@
         border: 1px solid green;
         padding: 5px;
         border-radius: 5px;
+        text-transform: capitalize;
         cursor: pointer;
       }
     }

@@ -5,12 +5,15 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
-import { productInputs, userInputs } from "./formSource";
+import { hotelInputs, productInputs, roomInputs, userInputs } from "./formSource";
 
 import "./style/dark.scss"
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
+import { hotelColumns, roomColumns, userColumns } from "./dataTableSource";
+import NewHotel from "./pages/newHotel/NewHotel";
+import NewRoom from "./pages/newRoom/NewRoom";
 
 function App() {
 const {darkMode} = useContext(DarkModeContext)
@@ -39,7 +42,7 @@ const ProtectedRoute = ({ children }) => {
               }
             />
             <Route path="users">
-              <Route index element={<List />} />
+              <Route index element={<List columns={userColumns} />} />
               <Route
                 path=":userId"
                 element={
@@ -80,6 +83,60 @@ const ProtectedRoute = ({ children }) => {
                 element={
                   <ProtectedRoute>
                     <New inputs={productInputs} title="Add New Product" />
+                  </ProtectedRoute>
+                }
+              />
+            </Route>
+
+            <Route path="hotels">
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <List columns={hotelColumns}/>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path=":hotelId"
+                element={
+                  <ProtectedRoute>
+                    <Single />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <NewHotel inputs={hotelInputs} title="Add New Hotel" />
+                  </ProtectedRoute>
+                }
+              />
+            </Route>
+
+            <Route path="rooms">
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <List columns={roomColumns}/>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path=":roomId"
+                element={
+                  <ProtectedRoute>
+                    <Single />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <NewRoom inputs={roomInputs} title="Add New Room" />
                   </ProtectedRoute>
                 }
               />
