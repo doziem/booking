@@ -3,9 +3,43 @@ import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUpload
 import Sidebar from '../../components/sidebar/Sidebar'
 import Navbar from '../../components/navbar/Navbar'
 
+import axios from "axios"
+
 import "./new.scss"
 const New = ({inputs,title}) => {
   const [file, setFile] = useState("");
+  const [info, setInfo] = useState({});
+
+  const handleChange = (e) => {
+    setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = new FormData();
+
+    data.append("file", file);
+    data.append("upload_preset", "upload");
+     try {
+      const uploadRes = await axios.post(
+        "https://api.cloudinary.com/v1_1/dt6mlbsv5/image/upload",
+        data
+      );
+      console.log(uploadRes);
+      const { url } = uploadRes.data;
+
+      const newUser = {
+        ...info,
+        img: url,
+      };
+
+      console.log(info);
+
+      await axios.post("/auth/register", newUser);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="new">
       <Sidebar />
@@ -41,11 +75,11 @@ const New = ({inputs,title}) => {
               {inputs.map((input) => (
                 <div className="formInput" key={input.id}>
                   <label>{input.label} </label>
-                  <input type={input.type} placeholder={input.placeholder} />
+                  <input type={input.type} onChange={handleChange} id={input.id} placeholder={input.placeholder} />
                 </div>
               ))}
 
-              <button className="button">send</button>
+              <button onClick={handleSubmit} className="button">send</button>
             </form>
           </div>
         </div>
