@@ -70,14 +70,6 @@ export const userColumns = [
     headerName: "Email",
     width: 200,
   },
-  // {
-  //   field: "status",
-  //   headerName: "Status",
-  //   width: 160,
-  //   renderCell:(params)=>{
-  //     return <div className={`cellWithStatus ${params.row.status}`}>{params.row.status} </div>
-  //   }
-  // },
   {
     field: "country",
     headerName: "Country",
@@ -110,12 +102,12 @@ export const userColumns = [
     {
       field: "title",
       headerName: "Title",
-      width: 230,
+      width: 260,
     },
     {
       field: "city",
       headerName: "City",
-      width: 100,
+      width: 120,
     },
   ];
   

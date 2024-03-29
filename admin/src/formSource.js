@@ -100,7 +100,7 @@ export const hotelInputs = [
     id: "address",
     label: "Address",
     type: "text",
-    placeholder: "elton st, 216",
+    placeholder: "Nza st, 21",
   },
   {
     id: "distance",
@@ -115,7 +115,7 @@ export const hotelInputs = [
     placeholder: "The best Hotel",
   },
   {
-    id: "desc",
+    id: "description",
     label: "Description",
     type: "text",
     placeholder: "description",
