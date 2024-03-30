@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import "./propertyList.css";
 
 const PropertyList = () => {
   const { data, loading } = useFetch("/hotels/countByType");
+  const navigate = useNavigate()
 
   const imgages = [
     "https://cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o=",
@@ -22,7 +24,7 @@ const PropertyList = () => {
         <>
           {data &&
             imgages.map((img, i) => (
-              <div className="pListItem" key={i}>
+              <div className="pListItem" key={i} onClick={()=>navigate(`/${data[i].type}`)}>
                 <img src={img} alt="" className="pListImg" />
                 <div className="pListTitles">
                   <h1>{data[i]?.type}</h1>
