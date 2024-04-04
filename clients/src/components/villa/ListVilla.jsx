@@ -1,8 +1,11 @@
+import Navbar from "../navbar/Navbar"
 import "./listVilla.css"
 
 const ListVilla = () => {
   return (
-    <div>ListVilla</div>
+    <div>
+        <Navbar/>
+    </div>
   )
 }
 

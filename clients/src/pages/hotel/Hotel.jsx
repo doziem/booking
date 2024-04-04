@@ -26,7 +26,7 @@ const Hotel = () => {
 const navigate = useNavigate()
   const { data, loading } = useFetch("/hotels/find/" + id);
 
-
+console.log("Data:::",data);
   const {dates,options} = useContext(SearchContext)
 const {user} = useContext(AuthContext)
 
@@ -114,7 +114,7 @@ const days=dayDifference(dates[0].endDate,dates[0].startDate);
               <div className="hotelImgWrapper" key={i}>
                 <img
                   onClick={() => handleOpen(i)}
-                  src={photo.src}
+                  src={photo}
                   alt=""
                   className="hotelImg"
                 />

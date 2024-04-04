@@ -1,8 +1,12 @@
+import Navbar from "../navbar/Navbar"
 import "./listCabin.css"
 
 const ListCabin = () => {
   return (
-    <div>ListCabin</div>
+    <div>  
+      <Navbar/>
+      
+    </div>
   )
 }
 

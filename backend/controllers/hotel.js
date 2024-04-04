@@ -77,6 +77,7 @@ export const countByCity = async (req, res,next) => {
   }
 };
 
+
 export const countByType = async (req, res,next) => {
   
   try {
