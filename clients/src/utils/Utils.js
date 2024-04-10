@@ -1,7 +1,4 @@
-import { IoStarOutline } from "react-icons/io5";
-import { IoStarSharp } from "react-icons/io5";
-import { MdOutlineStarOutline } from "react-icons/md";
-
+import { IoStarSharp,IoStarOutline,IoStarHalf} from "react-icons/io5";
 
 export const naira = Intl.NumberFormat("en-NG", {
     style: "currency",
@@ -23,15 +20,17 @@ export const formatCurrency = (value) => {
         return naira;
     }
 };
-export const StarRating = ({ rating }) => {
+export const StarRating = ( rating ) => {
+
+  console.log("rating:::",rating);
     const star = [];
     for (let i = 1; i <= 5; i++) {
       if (i < rating) {
-        star.push(<IoStarSharp key={i}/>);
+        star.push(<IoStarSharp style={{width:"1.8rem",height:"1.8rem", color: "yellow"}} key={i}/>);
       } else if (i === Math.ceil(rating) && !Number.isInteger(rating)) {
-        star.push(<IoStarOutline key={i} />);
+        star.push(<IoStarHalf style={{width:"1.8rem",height:"1.8rem", color: "yellow"}} key={i} />);
       } else {
-        star.push(<MdOutlineStarOutline key={i} />);
+        star.push(<IoStarOutline style={{width:"1.8rem",height:"1.8rem", color: "yellow"}} key={i} />);
       }
     }
   

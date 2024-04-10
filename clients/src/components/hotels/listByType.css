@@ -1,9 +1,19 @@
-.list_hotel{
-display: flex;
-flex-direction: column;
+
+.list_hotel_main{
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
   
   .list_hotel_Item {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
     border: 1px solid lightgray;
     padding: 10px;
     border-radius: 5px;
@@ -115,4 +125,8 @@ flex-direction: column;
     cursor: pointer;
     border-radius: 5px;
     width: 7rem;
+  }
+
+  .list_hotel_footer{
+    /* width: 100%; */
   }
