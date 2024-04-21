@@ -1,132 +1,189 @@
-
-.list_hotel_main{
+.list_hotel_main {
   margin-top: 50px;
-  width: 100%;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
-  
-  .list_hotel_Item {
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border: 1px solid lightgray;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 20px;
-    gap: 25px;
-  }
-  
-  .list_hotel_Img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    flex: 1
-  }
-  
-  .list_hotel_Desc {
-    display: flex;
+
+.list_hotel_Item {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 25px;
+}
+
+.list_hotel_Img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  flex: 1
+}
+
+.list_hotel_Desc {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  gap: 10px;
+  flex: 2;
+}
+
+.list_hotel_Title {
+  font-size: 20px;
+  color: #0071c2;
+}
+
+.list_hotel_Distance {
+  font-size: 12px;
+}
+
+.list_hotel_TaxiOp {
+  font-size: 12px;
+  background-color: #008009;
+  color: white;
+  width: max-content;
+  padding: 3px;
+  border-radius: 5px;
+
+}
+
+.list_hotel_Subtitle {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.list_hotel_Features {
+  font-size: 12px;
+}
+
+.list_hotel_CancelOp {
+  font-size: 12px;
+  color: #008009;
+  font-weight: bold;
+}
+
+.list_hotel_CancelOpSubtitle {
+  font-size: 12px;
+  color: #008009;
+}
+
+.list_hotel_Details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.list_hotel_Rating {
+  display: flex;
+  justify-content: space-between
+}
+
+.list_hotel_Rating>span {
+  font-weight: 500;
+}
+
+.list_hotel_Rating>button {
+  background-color: #008009;
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+  border: none;
+}
+
+.list_hotel_DetailTexts {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list_hotel_Price {
+  font-size: 24px;
+}
+
+.list_hotel_TaxOp {
+  font-size: 13px;
+  color: gray;
+}
+
+.list_hotel_CheckButton {
+  background-color: #008009;
+  color: white;
+  font-weight: bold;
+  padding: 10px 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 9rem;
+}
+
+
+
+
+@media only screen and (min-width: 320px) {
+  .list_hotel_Item{
     flex-direction: column;
-    gap: 10px;
-    flex: 2;
   }
-  
-  .list_hotel_Title {
-    font-size: 20px;
-    color: #0071c2;
-  }
-  
-  .list_hotel_Distance {
-    font-size: 12px;
-  }
-  
-  .list_hotel_TaxiOp {
-    font-size: 12px;
-    background-color: #008009;
-    color: white;
-    width: max-content;
-    padding: 3px;
-    border-radius: 5px;
-    
-  }
-  
-  .list_hotel_Subtitle{
-    font-size: 12px;
-    font-weight: bold;
-  }
-  
-  .list_hotel_Features{
-    font-size: 12px;
-  }
-  
-  .list_hotel_CancelOp{
-    font-size: 12px;
-    color: #008009;
-    font-weight: bold;
-  }
-  
-  .list_hotel_CancelOpSubtitle{
-    font-size: 12px;
-    color: #008009;
-  }
-  
-  .list_hotel_Details {
-    flex: 1;
-    display: flex;
+  .list_hotel_Img{
+    width: 100%;
+    height: 60px;
+  } 
+}
+
+@media only screen and (min-width: 430px) {
+
+
+  .list_hotel_Rating {
     flex-direction: column;
-    justify-content: space-around;
+    gap: 12px;
   }
-  
-  .list_hotel_Rating{
-    display: flex;
-    justify-content: space-between
-  }
-  
-  .list_hotel_Rating>span{
-    font-weight: 500;
-  }
-  .list_hotel_Rating>button{
-   background-color: #008009;
-   color: white;
-   padding: 5px;
-   font-weight: bold;
-   border: none;
-  }
-  
-  .list_hotel_DetailTexts{
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .list_hotel_Price{
-    font-size: 24px;
-  }
-  
-  .list_hotel_TaxOp{
-    font-size: 13px;
-    color: gray;
-  }
-  
-  .list_hotel_CheckButton{
-    background-color: #008009;
-    color: white;
-    font-weight: bold;
-    padding: 10px 5px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 7rem;
+}
+
+@media only screen and (min-width: 541px) {
+  .list_hotel_Item{
+    flex-direction: row;
   }
 
-  .list_hotel_footer{
-    /* width: 100%; */
+  .list_hotel_Img{
+    width: 100%;
+    height: 300px;
+  } 
+ 
+}
+
+
+@media only screen and (min-width: 768px) {
+
+ 
+  .list_hotel_Details{
+    flex: 1.2;
   }
+
+  .list_hotel_Rating{
+    flex-direction: column;
+  }
+
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media only screen and (min-width: 1067px) {
+  .list_hotel_Rating {
+    flex-direction: row;
+  }
+
+
+
+}
