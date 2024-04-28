@@ -16,7 +16,7 @@ const MainHotel = () => {
   console.log("Data:::",data);
 
   return (
-    <div>
+    <div className="mainHotel">
       <Navbar />
       <MainHeader/>
       
