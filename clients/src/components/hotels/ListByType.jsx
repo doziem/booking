@@ -59,7 +59,7 @@ const ListByType = () => {
                   <span className="list_hotel_TaxOp">
                     Includes taxes and fees
                   </span>
-                  <Link to={`/hotel/${item?._id}/${item?.name}`}>
+                  <Link to={`/home/${item?._id}/${item?.name}`}>
                     <button className="list_hotel_CheckButton">
                      {item.name}
                     </button>

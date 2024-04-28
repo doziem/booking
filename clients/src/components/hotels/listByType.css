@@ -146,16 +146,13 @@
 @media only screen and (min-width: 430px) {
 
 
-  .list_hotel_Rating {
+  /* .list_hotel_Rating {
     flex-direction: column;
     gap: 12px;
-  }
+  } */
 }
 
 @media only screen and (min-width: 541px) {
-  .list_hotel_Item{
-    flex-direction: row;
-  }
 
   .list_hotel_Img{
     width: 100%;
@@ -164,10 +161,20 @@
  
 }
 
+@media only screen and (min-width: 566px) {
+
+
+  
+}
+
 
 @media only screen and (min-width: 768px) {
 
- 
+  .list_hotel_Item{
+    flex-direction: row;
+    /* flex-wrap: wrap */
+    }
+
   .list_hotel_Details{
     flex: 1.2;
   }
@@ -175,6 +182,8 @@
   .list_hotel_Rating{
     flex-direction: column;
   }
+
+
 
 }
 
