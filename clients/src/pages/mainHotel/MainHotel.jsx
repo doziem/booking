@@ -5,22 +5,29 @@ import "./mainHotel.css"
 import MailList from "../../components/mailList/MailList"
 import MainHeader from "../../components/mainHeader/MainHeader"
 import useFetch from "../../hooks/useFetch"
+import Slider from "../../components/slider/Slider"
+
+
+import 'react-slideshow-image/dist/styles.css'
+import SearchAvailableRoom from "../../components/availableRoom/SearchAvailableRoom"
 
 const MainHotel = () => {
     const location = useLocation();
 
+  
+
     const path = location.pathname.split("/")[2]
 
-  const { data, loading } = useFetch(`/hotels/find/${path}`);
+  const { data, } = useFetch(`/hotels/find/${path}`);
 
   console.log("Data:::",data);
 
   return (
     <div className="mainHotel">
       <Navbar />
-      <MainHeader/>
-      
-
+      <MainHeader />
+      <Slider items={data} />
+      <SearchAvailableRoom/>
       <MailList />
       <Footer />
     </div>

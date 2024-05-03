@@ -9,6 +9,7 @@ import List from "./pages/list/List";
 import Login from "./pages/login/Login";
 import ListByType from "./components/hotels/ListByType";
 import MainHotel from "./pages/mainHotel/MainHotel";
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 
